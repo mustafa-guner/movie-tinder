@@ -1,0 +1,21 @@
+<header>
+    <div class="top-header bg-main-dark-red"></div>
+    <div class="header-container">
+        <nav id="navbar" class="bg-main-light-red">
+            <h1 class="main-header"><a href="/">Movie Tender</a></h1>
+            <form action="/filmler-diziler" method="GET">
+                <div class="search-bar">
+                    <input type="text" class="search-input" name="name"  value="<%= searchOptions.name %>" id="search" placeholder="Film veya Dizi ara..." />
+                    <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <div class="nav">
+                <ul>
+                    <li><a href="/">Anasayfa</a></li>
+                    <li><a href="/filmler">Filmler</a></li>
+                    <li><a href="/diziler">Diziler</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

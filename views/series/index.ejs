@@ -1,0 +1,37 @@
+
+<form action="/diziler" method="GET">
+    Turler:
+    <select>
+        <option>Komedi</option>
+        <option>Korku</option>
+        <option>Aksiyon</option>
+        <option>Gerilim</option>
+        <option>Psikolojik</option>
+    </select>
+
+    <br>
+    Yapimci:
+    <select>
+        <option>Netflix</option>
+        <option>Exxen</option>
+        <option>Amazon</option>
+    </select>
+
+    <button type="submit">Ara</button>
+</form>
+<% series.forEach(serie => { %>
+    <div class="product-card">
+        <div class="product-card-title">
+            <h1><%= serie.name %></h1>
+            <p><%= serie.releaseDate %></p>
+        </div>
+        <div class="product-card-body">
+            <iframe src=<%=serie.trailer %>></iframe>
+        </div>
+        <div class="product-card-footer">
+            <p><%=serie.description %></p>
+            <p><%=serie.actors %></p>
+            <p><%=serie.seasons %></p>
+        </div>
+    </div>
+<%});%>

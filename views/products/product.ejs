@@ -1,0 +1,22 @@
+
+
+<% product.forEach(prd => { %>
+    <div class="product-card">
+        <div class="product-card-title">
+            <h1><%= prd.name %></h1>
+            <p><%= prd.releaseDate %></p>
+        </div>
+        <div class="product-card-body">
+            <iframe src=<%=prd.trailer %>></iframe>
+        </div>
+        <div class="product-card-footer">
+            <p>Aciklana: <%=prd.description %></p>
+            <p>Oyuncular: <%=prd.actors %></p>
+            <% if(prd.time === 0){%>
+                <p>Sezonlar: <%=prd.seasons%></p>
+            <%} else{%> 
+                <p>Sure: <%=prd.time%></p>
+            <%}%>
+        </div>
+    </div>
+<%});%>

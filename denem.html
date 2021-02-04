@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <h1></h1>
+   
+
+    <script>
+
+        const h1 = document.getElementById("h1");
+        
+
+        let Films = [{
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            _id: "60140116c8a64f51a0831675",
+            name: 'Extraction',
+            director: 'Sam Hargrave',
+            releaseDate: 2020,
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            producer: 'Netflix',
+            actors: 'Chris Hemsworth',
+            imbdScore: 8
+        },{
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            _id: "60140116c8a64f51a0831675",
+            name: 'Extraction',
+            director: 'Sam Hargrave',
+            releaseDate: 2020,
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            producer: 'Netflix',
+            actors: 'Chris Hemsworth',
+            imbdScore: 8
+        },{
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            _id: "60140116c8a64f51a0831675",
+            name: 'Extraction',
+            director: 'Sam Hargrave',
+            releaseDate: 2020,
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            producer: 'Netflix',
+            actors: 'Chris Hemsworth',
+            imbdScore: 8
+        },{
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            _id: "60140116c8a64f51a0831675",
+            name: 'Extraction',
+            director: 'Sam Hargrave',
+            releaseDate: 2020,
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            producer: 'Netflix',
+            actors: 'Chris Hemsworth',
+            imbdScore: 8
+        }, {
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            _id: "60140116c8a64f51a0831675",
+            name: 'Extraction',
+            director: 'Sam Hargrave',
+            releaseDate: 2020,
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            producer: 'Netflix',
+            actors: 'Chris Hemsworth',
+            imbdScore: 3
+        },{
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            _id: "60140116c8a64f51a0831675",
+            name: 'Extraction',
+            director: 'Sam Hargrave',
+            releaseDate: 2020,
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            producer: 'Netflix',
+            actors: 'Chris Hemsworth',
+            imbdScore: 8
+        },{
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            _id: "60140116c8a64f51a0831675",
+            name: 'Titanic',
+            director: 'Sam Hargrave',
+            releaseDate: 2020,
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            producer: 'Netflix',
+            actors: 'Chris Hemsworth',
+            imbdScore: 10
+        },
+        {
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            _id: "60140116c8a64f51a0831675",
+            name: 'Avatar',
+            director: 'Sam Hargrave',
+            releaseDate: 2020,
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            producer: 'Netflix',
+            actors: 'Chris Hemsworth',
+            imbdScore: 7
+        }]
+
+        // //Gunun Filmi
+        // function movieOfTheDay(films) {
+        //     const date = new Date();
+        //     let filmChances = [];
+
+        //     films.filter(film => {
+        //         if (film.imbdScore >= 7) {
+        //             filmChances.push(film);
+        //         }
+        //     });
+        //     let numberOfFilmChances = filmChances.length;
+        //     let randomFilmPicker = Math.floor(Math.random() * numberOfFilmChances);
+        //     console.log(randomFilmPicker)
+        //     return filmChances[randomFilmPicker]//returns object (film object)
+
+        // };
+
+      //Filter Functions
+function filterFilmsForImbd(films, imbd) {
+    let filmChances = [];
+    films.filter(film => {
+        if (film.imbdScore >= imbd) {
+            filmChances.push(film);
+        };
+    });
+    return filmChances;
+};
+
+//Movie Of The Day
+function movieOfTheDay(films) {
+    let arr = filterFilmsForImbd(films, 7);
+    let numberOfFilmChances = arr.length;
+    let randomFilmPicker = Math.floor(Math.random() * numberOfFilmChances);
+    return arr[randomFilmPicker];//returns object (film object)
+};
+
+//Recommended Films
+function recommendedMovies(films) {
+  let arr = filterFilmsForImbd(films, 7);
+  return arr.slice(1,7);
+};
+
+console.log(recommendedMovies(Films));
+
+
+
+       
+    </script>
+</body>
+
+</html>

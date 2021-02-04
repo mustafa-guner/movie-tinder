@@ -1,0 +1,44 @@
+<form action="/filmler" method="GET">
+    Turler:
+    <select>
+        <option>Komedi</option>
+        <option>Korku</option>
+        <option>Aksiyon</option>
+        <option>Gerilim</option>
+        <option>Psikolojik</option>
+    </select>
+
+    <br>
+
+    Yapimci:
+    <select>
+        <option>Netflix</option>
+        <option>Exxen</option>
+        <option>Amazon</option>
+    </select>
+    <button type="submit">Ara</button>
+</form>
+<br>
+<% movies.forEach(movie=> { %>
+    <div class="product-card">
+        <div class="product-card-title">
+            <h1>
+                <%= movie.name %>
+            </h1>
+            <p>
+                <%= movie.releaseDate %>
+            </p>
+        </div>
+        <div class="product-card-body">
+            <iframe src=<%=movie.trailer %>></iframe>
+        </div>
+        <div class="product-card-footer">
+            <p>
+                <%=movie.description %>
+            </p>
+            <p>
+                <%=movie.actors %>
+            </p>
+        </div>
+    </div>
+    <%});%>

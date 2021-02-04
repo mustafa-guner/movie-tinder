@@ -1,0 +1,60 @@
+/* Text */
+
+.text-center {
+    text-align: center;
+}
+
+.heading-small {
+    font-size: 1.25rem;
+}
+
+.heading-medium {
+    font-size: 1.5rem;
+}
+
+.heading-big {
+    font-size: 1.75rem;
+}
+
+
+/* Colors */
+
+.bg-main {
+    background: #414141;
+}
+
+.bg-main-dark-red {
+    background: #FE4141;
+}
+
+.bg-main-light-red {
+    background: #ff63637e;
+}
+
+.bg-prime-dark {
+    background: #00386D;
+}
+
+.bg-prime-light {
+    background: #01A6DF;
+}
+
+.bg-ntx-dark {
+    background: #141414;
+}
+
+.bg-ntx-light {
+    background: #E50814;
+}
+
+.bg-exn-dark {
+    background: #111111;
+}
+
+.bg-exn-light {
+    background: #F9C623;
+}
+
+.bg-footer {
+    background: #2F2E2E;
+}

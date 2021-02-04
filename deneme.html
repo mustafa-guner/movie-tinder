@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 1rem auto;
+        }
+
+        .film-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+        }
+
+        .film-card {
+            width: 300px;
+            height: 400px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .film-absoulte {
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            transform: translateX(-90%);
+            transition: transform .8s ease-out;
+            position: absolute;
+            top: 0;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .film-absoulte h2 {
+            transform: rotate(90deg);
+            text-align: center;
+
+            margin: auto 0 auto 270px;
+        }
+
+        .film-card:hover .film-absoulte {
+            transform: translateX(0%);
+        }
+
+        .film-card:hover .film-absoulte h2 {
+            display: none;
+        }
+
+
+
+        .film-card .film-poster {
+            width: 300px;
+            height: 500px;
+
+        }
+
+        .film-card img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            transform: rotate(270deg);
+            margin-right: 100px;
+            position: absolute;
+            left: -130px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="film-section">
+            <div class="film-card">
+                <div class="film-poster">
+                    <img src="https://assets.mubicdn.net/images/notebook/post_images/19593/images-w1400.jpg?1443151342">
+                </div>
+                <div class="film-absoulte">
+                    <h2>Netflix</h2>
+                    <div class="info">
+                        <p>+18</p>
+                        <p>+18</p>
+                        <p>+18</p>
+                    </div>
+                </div>
+            </div>
+            <div class="film-card">
+                <div class="film-poster">
+                    <img src="https://assets.mubicdn.net/images/notebook/post_images/19593/images-w1400.jpg?1443151342">
+                </div>
+                <div class="film-absoulte">
+                    <div class="producer-header">
+                        <h2>Netflix</h2>
+                    </div>
+
+                </div>
+            </div>
+            <div class="film-card">
+                <div class="film-poster">
+                    <img src="https://assets.mubicdn.net/images/notebook/post_images/19593/images-w1400.jpg?1443151342">
+                </div>
+                <div class="film-absoulte">
+                    <h2>Netflix</h2>
+                </div>
+            </div>
+            <div class="film-card">
+                <div class="film-poster">
+                    <img src="https://assets.mubicdn.net/images/notebook/post_images/19593/images-w1400.jpg?1443151342">
+                </div>
+                <div class="film-absoulte">
+                    <h2>Netflix</h2>
+                </div>
+            </div>
+            <div class="film-card">
+                <div class="film-poster">
+                    <img src="https://assets.mubicdn.net/images/notebook/post_images/19593/images-w1400.jpg?1443151342">
+                </div>
+                <div class="film-absoulte">
+                    <h2>Netflix</h2>
+                </div>
+            </div>
+            <div class="film-card">
+                <div class="film-poster">
+                    <img src="https://assets.mubicdn.net/images/notebook/post_images/19593/images-w1400.jpg?1443151342">
+                </div>
+                <div class="film-absoulte">
+                    <h2>Netflix</h2>
+                </div>
+            </div>
+            <div class="film-card">
+                <div class="film-poster">
+                    <img src="https://assets.mubicdn.net/images/notebook/post_images/19593/images-w1400.jpg?1443151342">
+                </div>
+                <div class="film-absoulte">
+                    <h2>Netflix</h2>
+                </div>
+            </div>
+            <div class="film-card">
+                <div class="film-poster">
+                    <img src="https://assets.mubicdn.net/images/notebook/post_images/19593/images-w1400.jpg?1443151342">
+                </div>
+                <div class="film-absoulte">
+                    <h2>Netflix</h2>
+                </div>
+            </div>
+            <div class="film-card">
+                <div class="film-poster">
+                    <img src="https://assets.mubicdn.net/images/notebook/post_images/19593/images-w1400.jpg?1443151342">
+                </div>
+                <div class="film-absoulte">
+                    <h2>Netflix</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+
+        let arrs = [{
+            id:1,
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            name: 'Titanic',
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            imbdScore: 3
+
+        },{ id:2,
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            name: 'Extraction',
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            imbdScore: 3
+        },{
+            id:3,
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            name: 'Tarzan',
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            imbdScore: 3
+        },{
+            id:4,
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            name: 'Rebecca',
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            imbdScore: 3
+        },{
+            id:5,
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            name: 'The Platform',
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            imbdScore: 3
+        },{
+            id:6,
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            name: 'Enola Holmes',
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            imbdScore: 3
+        },{
+            id:7,
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            name: 'The King',
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            imbdScore: 3
+        },{
+            id:8,
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            name: 'King Arthur',
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            imbdScore: 3
+        },{
+            id:9,
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            name: 'Six Underground',
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            imbdScore: 3
+        },{
+            id:10,
+            isSeries: false,
+            image: 'https://ryreviews.com/wp-content/uploads/2020/04/Extraction.jpg',
+            name: 'Click',
+            trailer: 'https://www.youtube.com/embed/L6P3nI6VnlY',
+            imbdScore: 3
+        }]
+        //Filter Functions
+        function filterFilmsForImbd(films, imbd) {
+            let filmChances = [];
+            films.filter(film => {
+                if (film.imbdScore >= imbd) {
+                    filmChances.push(film);
+                };
+            });
+            return filmChances;
+        };
+
+
+        //Recommended Films
+        function recommendedMovies(films, imbd) {
+            let arr = filterFilmsForImbd(films, imbd);
+            let storage = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (storage.indexOf(arr[i].name) === -1) {
+                    storage.push(arr[i])
+                };
+            };
+            return storage
+        };
+
+
+
+        function getUniqueListBy(arr, key) {
+           
+        return  [ ...new Map(arr.map(item => [item[key], item])).values()];
+           
+        }
+
+        console.log(getUniqueListBy(arrs,"name"));
+
+
+    </script>
+</body>
+
+</html>

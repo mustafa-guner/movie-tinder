@@ -8,6 +8,7 @@ body {
     background-color: #414141;
     color: white;
     font-family: 'Montserrat', sans-serif;
+  
 }
 
 
@@ -121,7 +122,6 @@ header .search-btn {
 
 #home1 {
     display: flex;
-    height: 87vh;
 }
 
 #left-content {
@@ -134,12 +134,6 @@ header .search-btn {
     width: 100%;
     margin-top: 4rem;
 }
-
-
-/* MOVIE OF THE DAY SECTION */
-
-
-/* HEADING and IMDb Part */
 
 #left-content .head-part {
     display: flex;
@@ -247,98 +241,3 @@ header .search-btn {
     color: #FE4141;
 }
 
-
-/* FEATURED MOVIES SECTION */
-
-#right-content {
-    width: 100%;
-}
-
-#right-content .motd-container {
-    display: grid;
-    justify-content: center;
-    position: relative;
-    grid-template-columns: repeat(3, 243px);
-    grid-column-gap: 50px;
-    grid-row-gap: 15px;
-    margin: 0.6rem;
-}
-
-#right-content .cards {
-    width: 243px;
-    height: 360px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-#right-content .cards .motd-part .movie-img {
-    width: 243px;
-    height: 360px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-}
-
-#right-content .netflix,.amazon,.exxen {
-    width: 100%;
-    height: 100%;
-    transform: translateX(-90%);
-    transition: transform .8s ease-out;
-    position: absolute;
-    top: 0;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-#right-content .netflix{
-    background-color: black;
-}
-
-#right-content .amazon{
-    background-color:blue;
-}
-
-#right-content .exxen{
-    background-color: yellow;
-}
-
-#right-content .cards:hover .netflix,.cards:hover .amazon,.cards:hover .exxen {
-    transform: translateX(0%);
-}
-
-#right-content .cards:hover .netflix h2,.cards:hover  .amazon h2,.cards:hover  .exxen h2{
-    display: none;
-}
-
-
-/* #right-content .cards:hover {
-    height: 510px;
-    width: 380px;
-} */
-
-#right-content .cards .motd-part {
-    width: 300px;
-    height: 500px;
-}
-
-#right-content .netflix h2,.amazon h2,.exxen h2 {
-    transform: rotate(-90deg);
-    text-align: center;
-    margin: auto 0 auto 220px;
-  
-}
-
-#right-content .netflix h2{
-    color: #FE4141;
-}
-
-#right-content .amazon h2{
-    color: #fff;
-}
-#right-content .exxen h2{
-    color: #000;
-}

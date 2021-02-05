@@ -17,33 +17,6 @@ seriesRoute.get("/",async (req,res)=>{
 });
 
 
-seriesRoute.post("/diziKaydet",async(req,res)=>{
-   const { name, director, releaseDate, trailer,
-      writers, image, producer, actors, imbdScore, description,
-      seasons, type } = req.body;
-
-      const product = await Series.create({
-         name,
-         director,
-         releaseDate,
-         trailer,
-         writers,
-         image,
-         producer,
-         actors,
-         imbdScore,
-         description,
-         seasons,
-         type
-      });
-
-     res.send({
-        message:`${product.name} is added [series]`
-     })
-
-})
-
-
 
 //Exporting the route
 module.exports = seriesRoute; 

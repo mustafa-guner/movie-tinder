@@ -1,0 +1,128 @@
+footer {
+    border-top: 3px solid #676767;
+    background-color: #2E2E2E;
+    padding: 2rem 2rem 1rem 2rem;
+}
+
+.footer-informations {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+.logo-block {
+    display: flex;
+}
+
+.logo {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    width: 140px;
+    height: 140px;
+    align-self: center;
+}
+
+.slogan {
+    align-self: center;
+    color: white;
+    margin-left: 1.2rem;
+    padding-top: 1.8rem;
+    font-size: 1.3rem;
+}
+
+.slogan span {
+    color: #FE4141;
+}
+
+.producer-brands {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-top: 2rem;
+}
+
+.producer-brands a {
+    display: flex;
+}
+
+.producer-brands .exxen-logo {
+    align-self: center;
+    width: 168px;
+    height: 74px;
+    margin-right: 3rem;
+}
+
+.producer-brands .netflix-logo {
+    align-self: center;
+    width: 185px;
+    height: 70px;
+    margin-right: 3rem;
+}
+
+.producer-brands .prime-logo {
+    align-self: center;
+    width: 220px;
+    height: 70px;
+}
+
+.social-header {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    font-style: italic;
+    margin: 2rem 0.8rem 0 0;
+}
+
+.links {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.links i {
+    color: #FF6364;
+    text-align: center;
+    margin-right: 1.2rem;
+    font-size: 3rem;
+}
+
+.copy-right {
+    text-align: center;
+    color: white;
+    padding: 2rem 0 0 1rem;
+    font-size: 0.8rem;
+}
+
+.footer-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.footer-form input {
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: #2E2E2E;
+    color: white;
+    width: 250px;
+    padding: .7rem;
+}
+
+.footer-form input::placeholder {
+    font-style: italic;
+}
+
+.footer-form input:focus,
+button:focus {
+    outline: none;
+}
+
+.footer-form button,
+.disabled:disabled {
+    background-color: #2E2E2E;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    font-size: 1.5rem;
+}

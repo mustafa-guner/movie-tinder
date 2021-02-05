@@ -1,0 +1,482 @@
+/* CARDS MAIN */
+
+#right-content {
+    width: 100%;
+}
+
+#right-content .card-container {
+    display: grid;
+    justify-content: center;
+    position: relative;
+    grid-template-columns: repeat(3, 243px);
+    grid-column-gap: 50px;
+    grid-row-gap: 15px;
+    margin: 0.6rem;
+}
+
+#right-content .cards {
+    width: 243px;
+    height: 360px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+#right-content .cards .card-part .movie-img {
+    width: 243px;
+    height: 360px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+
+/* NETFLIX CARDS */
+
+#right-content .card-hover-netflix {
+    width: 100%;
+    height: 100%;
+    background-color: #141414;
+    transform: translateX(-90%);
+    transition: transform .8s ease-out;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#right-content .cards:hover .card-hover-netflix {
+    transform: translateX(0%);
+}
+
+#right-content .cards .card-part {
+    width: 300px;
+    height: 500px;
+}
+
+#right-content .card-hover-netflix .header-netflix {
+    color: #E50814;
+    font-size: 20px;
+    font-weight: 500;
+    transform: rotate(-90deg);
+    text-align: center;
+    margin: auto 0 auto 222px;
+    position: fixed;
+}
+
+#right-content .cards:hover .card-hover-netflix .header-netflix {
+    display: none;
+}
+
+
+/* card left section */
+
+#right-content .cards .card-hover-netflix .left-section-netflix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 24px;
+    height: 360px;
+    border-right: 1px solid #E50814;
+    position: absolute;
+    left: 0px;
+}
+
+#right-content .cards .card-hover-netflix .left-section-netflix p {
+    transform: rotate(-90deg);
+    text-align: center;
+    width: 400px;
+}
+
+/* #right-content .cards .card-hover-netflix .left-section-netflix .year {
+  
+}
+
+#right-content .cards .card-hover-netflix .left-section-netflix .age {
+ 
+} */
+
+
+/* card content section */
+
+#right-content .cards .card-trailer-netflix iframe {
+    width: 180px;
+    height: 102px;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    border-radius: 10px;
+}
+
+
+/* card content absolute part */
+
+#right-content .cards .card-trailer-netflix .card-content-netflix,
+.card-desc,
+.card-type,
+.card-director,
+.card-stars,
+.card-movie-time {
+    font-size: 11px;
+    width: 180px;
+}
+
+#right-content .cards .card-trailer-netflix .card-content-netflix .card-desc {
+   margin-top:5rem;
+   margin-left: .2rem;
+}
+
+#right-content .cards .card-trailer-netflix .card-content-netflix .card-type {
+    margin-top: 1rem;
+    margin-left: .2rem;
+}
+
+#right-content .cards .card-trailer-netflix .card-content-netflix .card-director {
+   padding: .3rem 0;
+   margin-left: .2rem;
+}
+
+#right-content .cards .card-trailer-netflix .card-content-netflix .card-stars {
+    padding: .3rem 0;
+    margin-left: .2rem;
+}
+
+#right-content .cards .card-trailer-netflix .card-content-netflix .card-movie-time {
+    padding: .3rem 0;
+    margin-left: .2rem;
+}
+
+#right-content .cards .card-trailer-netflix .card-content-netflix .card-movie-time span{
+    color: white;
+    }
+
+#right-content .cards .card-trailer-netflix .card-imdb-netflix p {
+    font-size: 12px;
+    width: 150px;
+    position: absolute;
+    bottom: 11px;
+    left: 40px;
+}
+
+#right-content .cards .card-trailer-netflix span {
+    color: #E50814;
+    font-weight: bold;
+}
+
+#right-content .cards .card-trailer-netflix .card-playnow-bttn-netflix a {
+    padding: 0.3rem 0.7rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #E50814;
+    font-size: 11px;
+    position: absolute;
+    bottom: 10px;
+    right: 25px;
+}
+
+
+/* PRIME VIDEO CARDS */
+
+#right-content .card-hover-prime {
+    width: 100%;
+    height: 100%;
+    background-color: #00386D;
+    transform: translateX(-90%);
+    transition: transform .8s ease-out;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#right-content .cards:hover .card-hover-prime {
+    transform: translateX(0%);
+}
+
+#right-content .cards .card-part {
+    width: 300px;
+    height: 500px;
+}
+
+#right-content .card-hover-prime .header-prime {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transform: rotate(-90deg);
+    text-align: center;
+    margin: auto 0 auto 222px;
+    width: 200px;
+    position: fixed;
+}
+
+#right-content .cards:hover .card-hover-prime .header-prime {
+    display: none;
+}
+
+
+/* card left section */
+
+#right-content .cards .card-hover-prime .left-section-prime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 24px;
+    height: 360px;
+    border-right: 1px solid #01A6DF;
+    position: absolute;
+    left: 0px;
+}
+
+#right-content .cards .card-hover-prime .left-section-prime p {
+    transform: rotate(-90deg);
+    text-align: center;
+    width: 400px;
+}
+
+/* #right-content .cards .card-hover-prime .left-section-prime .year {
+    text-align: end;
+}
+
+#right-content .cards .card-hover-prime .left-section-prime .age {
+    text-align: start;
+} */
+
+
+/* card content section */
+
+#right-content .cards .card-trailer-prime iframe {
+    width: 180px;
+    height: 102px;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    border-radius: 10px;
+}
+
+
+/* card content absolute part */
+
+#right-content .cards .card-trailer-prime .card-content-prime,
+.card-desc,
+.card-type,
+.card-director,
+.card-stars,
+.card-movie-time {
+    font-size: 11px;
+    width: 180px;
+}
+
+#right-content .cards .card-trailer-prime .card-content-prime .card-desc {
+    margin-top:5rem;
+    margin-left: .2rem;
+ }
+ 
+ #right-content .cards .card-trailer-prime .card-content-prime .card-type {
+     margin-top: 1rem;
+     margin-left: .2rem;
+ }
+ 
+ #right-content .cards .card-trailer-prime .card-content-prime .card-type {
+    padding: .3rem 0;
+    margin-left: .2rem;
+ }
+ 
+ #right-content .cards .card-trailer-prime .card-content-prime .card-stars {
+     padding: .3rem 0;
+     margin-left: .2rem;
+ }
+ 
+ #right-content .cards .card-trailer-prime .card-content-prime .card-movie-time  {
+     padding: .3rem 0;
+     margin-left: .2rem;
+ }
+
+
+#right-content .cards .card-trailer-prime .card-imdb-prime p {
+    font-size: 12px;
+    width: 150px;
+    position: absolute;
+    bottom: 11px;
+    left: 40px;
+}
+
+#right-content .cards .card-trailer-prime span {
+    color: #01A6DF;
+    font-weight: bold;
+}
+
+#right-content .cards .card-trailer-prime .card-playnow-bttn-prime a {
+    padding: 0.3rem 0.7rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #01A6DF;
+    font-size: 11px;
+    position: absolute;
+    bottom: 10px;
+    right: 25px;
+}
+
+
+/* EXXEN VIDEO CARDS */
+
+#right-content .card-hover-exxen {
+    width: 100%;
+    height: 100%;
+    background-color: #111111;
+    transform: translateX(-90%);
+    transition: transform .8s ease-out;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#right-content .cards:hover .card-hover-exxen {
+    transform: translateX(0%);
+}
+
+#right-content .cards .card-part {
+    width: 300px;
+    height: 500px;
+}
+
+#right-content .card-hover-exxen .header-exxen {
+    color: #F9C623;
+    font-size: 18px;
+    font-weight: 500;
+    transform: rotate(-90deg);
+    text-align: center;
+    margin: auto 0 auto 222px;
+    width: 200px;
+    position: fixed;
+}
+
+#right-content .cards:hover .card-hover-exxen .header-exxen {
+    display: none;
+}
+
+
+/* card left section */
+
+#right-content .cards .card-hover-exxen .left-section-exxen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 24px;
+    height: 360px;
+    border-right: 1px solid #F9C623;
+    position: absolute;
+    left: 0px;
+}
+
+#right-content .cards .card-hover-exxen .left-section-exxen p {
+    transform: rotate(-90deg);
+    text-align: center;
+    width: 400px;
+}
+
+/* #right-content .cards .card-hover-exxen .left-section-exxen .year {
+    text-align: end;
+}
+
+#right-content .cards .card-hover-exxen .left-section-exxen .age {
+    text-align: start;
+} */
+
+
+/* card content section */
+
+#right-content .cards .card-trailer-exxen iframe {
+    width: 180px;
+    height: 102px;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    border-radius: 10px;
+}
+
+
+/* card content absolute part */
+
+#right-content .cards .card-trailer-exxen .card-content-exxen,
+.card-desc,
+.card-type,
+.card-director,
+.card-stars,
+.card-movie-time {
+    font-size: 11px;
+    width: 180px;
+}
+
+#right-content .cards .card-trailer-exxen .card-content-exxen .card-desc {
+    position: absolute;
+    top: 117px;
+    left: 38px;
+}
+
+#right-content .cards .card-trailer-exxen .card-content-exxen .card-type {
+    position: absolute;
+    bottom: 115px;
+    left: 38px;
+}
+
+#right-content .cards .card-trailer-exxen .card-content-exxen .card-director {
+    position: absolute;
+    bottom: 95px;
+    left: 38px;
+}
+
+#right-content .cards .card-trailer-exxen .card-content-exxen .card-stars {
+    position: absolute;
+    bottom: 60px;
+    left: 38px;
+}
+
+#right-content .cards .card-trailer-exxen .card-content-exxen .card-movie-time {
+    position: absolute;
+    bottom: 40px;
+    left: 38px;
+}
+
+#right-content .cards .card-trailer-exxen .card-content-exxen .card-movie-time span{
+    color: white;
+    }
+
+#right-content .cards .card-trailer-exxen .card-imdb-exxen p {
+    font-size: 12px;
+    width: 150px;
+    position: absolute;
+    bottom: 11px;
+    left: 40px;
+}
+
+#right-content .cards .card-trailer-exxen span {
+    color: #F9C623;
+    font-weight: bold;
+}
+
+#right-content .cards .card-trailer-exxen .card-playnow-bttn-exxen a {
+    padding: 0.3rem 0.7rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: #F9C623;
+    font-size: 11px;
+    position: absolute;
+    bottom: 10px;
+    right: 25px;
+}

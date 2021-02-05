@@ -64,6 +64,13 @@ const Products = new Schema({
         type:String,
         required:[true,"Lutfen turunu belirtiniz."]
     },
+    ageLimit:{
+        type:Number
+    },
+    link:{
+        type:String,
+        required:[true,"Lutfen link giriniz"]
+    }
 });
 
 

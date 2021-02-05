@@ -29,32 +29,6 @@ movieRoute.get("/",async (req,res)=>{
 
 //----------------------------------------------------------------------
 
-//--FILM KAYDETME----
-movieRoute.post("/filmKaydet", async (req, res) => {
-
-    const {name, director, releaseDate, trailer,
-        writers, image, producer, actors, imbdScore, description,
-        time, type } = req.body;
-
-    const product =await Product.create({
-        name,
-        director,
-        releaseDate,
-        trailer,
-        writers,
-        image,
-        producer,
-        actors,
-        imbdScore,
-        description,
-        time,
-        type
-    });
-
-    res.send({
-        message:`${product.name} is added`
-    });
-});
 
 //Exporting the route
 module.exports = movieRoute; 

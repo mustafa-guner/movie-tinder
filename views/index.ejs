@@ -1,33 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="movie, review, IMDb, netflix, prime video, exxen">
-    <meta name="description" content="Movie Tender - Movie review">
-    <title>Movie Tender</title>
-
-    <!-- Bootstrap CDN-->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
-
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="./assets/css/global.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <!-- Page Icon -->
-    <link rel="icon" href="./assets/fonts/logo.png">
-</head>
-
 <body>
     <div class="hr-edit">
         <hr>
@@ -43,89 +13,177 @@
         <article id="left-content">
             <div>
                 <div class="head-part">
-                    <h2 class="main-head heading-big"> 
-                        <%= movieOfDay.name%> <span class="movie-year"><%= movieOfDay.releaseDate%></span> <span class="movie-age-group">+18</span>
+                    <h2 class="main-head heading-big">
+                        <%= movieOfDay.name%> (<span class="movie-year">
+                                <%= movieOfDay.releaseDate%>
+                            </span>) <span class="movie-age-group">+18</span>
                     </h2>
-                    <h3 class="imdb"><span>IMDb Score:</span> <%=movieOfDay.imbdScore%> <i class="fas fa-star"></i></h3>
+                    <h3 class="imdb"><span>IMDb Puani:</span>
+                        <%=movieOfDay.imbdScore%> <i class="fas fa-star"></i>
+                    </h3>
                 </div>
                 <div class="movie-video">
-                    <iframe src="<%=movieOfDay.trailer%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="<%=movieOfDay.trailer%>" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                 </div>
                 <div class="desc-part">
-                    <p class="desc"> <%=movieOfDay.description%></p>
+                    <p class="desc">
+                        <%=movieOfDay.description%>
+                    </p>
                     <div class="playnow-bttn">
-                        <a href="#">Şimdi İzle <i class="far fa-play-circle"></i></a>
+                        <a href="<%=movieOfDay.link%>" target="_blank">Şimdi İzle <i class="far fa-play-circle"></i></a>
                     </div>
                 </div>
                 <div class="info-part">
                     <div class="director">
                         <h4>Yönetmen:</h4>
-                        <p> <%=movieOfDay.director%> </p>
+                        <p>
+                            <%=movieOfDay.director%>
+                        </p>
                     </div>
                     <div class="stars">
                         <h4>Başrol:</h4>
-                        <p><%=movieOfDay.actors%></p>
+                        <p>
+                            <%=movieOfDay.actors%>
+                        </p>
                     </div>
                     <div class="types">
                         <h4>Türler:</h4>
-                        <p> <%=movieOfDay.type%> </p>
+                        <p>
+                            <%=movieOfDay.type%>
+                        </p>
                     </div>
                     <div class="movie-time">
                         <h4>Film süresi:</h4>
-                        <p> <%=movieOfDay.time%> dk</p>
+                        <p>
+                            <%=movieOfDay.time%> dk
+                        </p>
                     </div>
                 </div>
             </div>
         </article>
 
+        <!--Reccommended Films Section-->
         <article id="right-content">
-            <div class="motd-container">
+            <div class="card-container">
                 <%recommended.forEach(rec=> { %>
-                    <% if(rec.isSeries === false) {%>
+                    <% if(rec.isSeries===false) {%>
                         <div class="cards">
-                            <div class="motd-part">
-                                <img class="movie-img" src="<%= rec.image%>">
+                            <div class="card-part">
+                                <img class="movie-img" src="<%= rec.image%>" alt="">
                             </div>
-                            <% if(rec.producer === "Netflix"){ %>
-                               <div class="netflix">
-                                   <h2><%= rec.producer%></h2>
-                                   <div class="left-section">
-                                       <% if(rec.time === 0){%>
-                                           <p><%=rec.seasons%></p>
-                                       <%} else{%> 
-                                           <p><%=rec.time%></p>
-                                       <%}%>
-                                   </div>
-                               </div>
-                            <%} else if(rec.producer === "Prime Video"){%>
-                               <div class="amazon%>">
-                                   <h2><%= rec.producer%></h2>
-                                   <div class="left-section">
-                                       <% if(rec.time === 0){%>
-                                           <p><%=rec.seasons%></p>
-                                       <%} else{%> 
-                                           <p><%=rec.time%></p>
-                                       <%}%>
-                                   </div>
-                               </div>
-                            <%}else if(rec.producer === "Exxen"){%>
-                               <div class="exxen">
-                                   <h2><%= rec.producer%> </h2>
-                                   <div class="left-section">
-                                       <% if(rec.time === 0){%>
-                                           <p><%=rec.seasons%></p>
-                                       <%} else{%> 
-                                           <p><%=rec.time%></p>
-                                       <%}%>
-                                   </div>
-                               </div>
+                            <% if(rec.producer==="Netflix" ){ %>
+                            <div class="card-hover-netflix">
+                                <p class="header-netflix"> <%= rec.producer%> </p>
+                                <div class="left-section-netflix">
+                                    <p class="year"><%= rec.releaseDate %></p>
+                                    <P class="card-header"><%= rec.name%></P>
+                                    <p class="age"><span>+</span>18</p>
+                                </div>
+                                <div class="card-trailer-netflix">
+                                    <iframe src="<%= rec.trailer %>" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                    <div class="card-content-netflix">
+                                        <p class="card-desc"><%= rec.description %></p>
+                                        <p class="card-type"><span>Türler: </span> <%= rec.type%> </p>
+                                        <p class="card-director"><span>Yönetmen: </span> <%= rec.director%> </p>
+                                        <p class="card-stars"><span>Başrol: </span> <%= rec.actors%> </p>
+                                        <p class="card-movie-time">
+                                            <% if(rec.time === 0){%>
+                                                Sezonlar: <span> <%=rec.seasons%> </span>
+                                            <%} else{%>
+                                                Suresi: <span> <%=rec.time%> dk</span>
+                                            <%}%>
+                                        </p>
+                                    </div>
+                                    <div class="card-imdb-netflix">
+                                        <p>imdb: <span> <%=rec.imbdScore%></span></p>
+                                    </div>
+                                    <div class="card-playnow-bttn-netflix">
+                                        <a href="<%=rec.link%>" target="_blank">Şimdi İzle <i class="far fa-play-circle"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <%} else if(rec.producer==="Prime Video" ){%>
+                                <div class="card-hover-prime">
+                                    <p class="header-prime"> <%= rec.producer%> </p>
+                                    <div class="left-section-prime">
+                                        <p class="year"><%= rec.releaseDate %></p>
+                                        <P class="card-header"><%= rec.name%></P>
+                                        <p class="age"><span>+</span>18</p>
+                                    </div>
+                                    <div class="card-trailer-prime">
+                                        <iframe src="<%= rec.trailer %>" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                        <div class="card-content-prime">
+                                            <p class="card-desc"><%= rec.description %></p>
+                                            <p class="card-type"><span>Türler: </span> <%= rec.type%> </p>
+                                            <p class="card-director"><span>Yönetmen: </span> <%= rec.director%> </p>
+                                            <p class="card-stars"><span>Başrol: </span> <%= rec.actors%> </p>
+                                            <p class="card-movie-time">
+                                                <% if(rec.time === 0){%>
+                                                    Sezonlar: <span> <%=rec.seasons%> </span>
+                                                <%} else{%>
+                                                    Suresi: <span> <%=rec.time%> dk</span>
+                                                <%}%>
+                                            </p>
+                                        </div>
+                                        <div class="card-imdb-prime">
+                                            <p>imdb: <span> <%=rec.imbdScore%></span></p>
+                                        </div>
+                                        <div class="card-playnow-bttn-prime">
+                                            <a href="https://www.netflix.com">Şimdi İzle <i class="far fa-play-circle"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <%}else{%>
+                                <div class="card-hover-exxen">
+                                    <p class="header-exxen"> <%= rec.producer%> </p>
+                                    <div class="left-section-exxen">
+                                        <p class="year"><%= rec.releaseDate %></p>
+                                        <P class="card-header"><%= rec.name%></P>
+                                        <p class="age"><span>+</span>18</p>
+                                    </div>
+                                    <div class="card-trailer-exxen">
+                                        <iframe src="<%= rec.trailer %>" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                        <div class="card-content-exxen">
+                                            <p class="card-desc"><%= rec.description %></p>
+                                            <p class="card-type"><span>Türler: </span> <%= rec.type%> </p>
+                                            <p class="card-director"><span>Yönetmen: </span> <%= rec.director%> </p>
+                                            <p class="card-stars"><span>Başrol: </span> <%= rec.actors%> </p>
+                                            <p class="card-movie-time">
+                                                <% if(rec.time === 0){%>
+                                                    Sezonlar: <span> <%=rec.seasons%> </span>
+                                                <%} else{%>
+                                                    Suresi: <span> <%=rec.time%> dk</span>
+                                                <%}%>
+                                            </p>
+                                        </div>
+                                        <div class="card-imdb-exxen">
+                                            <p>imdb: <span> <%=rec.imbdScore%></span></p>
+                                        </div>
+                                        <div class="card-playnow-bttn-exxen">
+                                            <a href="<%rec.link%>">Şimdi İzle <i class="far fa-play-circle"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
                             <%}%>
-                         </div>
-                    <%}%>
-             <%});%>
+                        </div>
+                        <%}%>
+                    <%})%>
             </div>
         </article>
-        
+    </section>
+
+
+    <!--Films Ordered By PRODUCERS-->
+    <section>
+
     </section>
 </body>
 

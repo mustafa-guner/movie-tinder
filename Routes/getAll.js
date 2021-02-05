@@ -8,6 +8,7 @@ getAll.get("/", async (req, res) => {
     let searchOptions = {};
     if (req.query.name != null && req.query.name !== "") {
         searchOptions.name = new RegExp(req.query.name, 'i');
+        console.log(req.query)
     }
     try {
         const product = await Products.find(searchOptions);
@@ -21,6 +22,8 @@ getAll.get("/", async (req, res) => {
         res.redirect("/");
     }
 });
+
+//GET
 
 
 getAll.post("/urunKaydet", async (req, res) => {

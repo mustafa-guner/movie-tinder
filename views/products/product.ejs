@@ -1,23 +1,116 @@
+<section id="films-page">
+    <div class="card-container">
+    <% product.forEach(prd=> { %>
+        <div class="cards">
+            <div class="card-part">
+                <img class="movie-img" src="<%= prd.image%>" alt="">
+            </div>
+            <!--Netflix Section-->
+            <% if(prd.producer==="Netflix" ){ %>
+            <div class="card-hover-netflix">
+                <p class="header-netflix"> <%= prd.producer%> </p>
+                <div class="left-section-netflix">
+                    <p class="year"><%= prd.releaseDate %></p>
+                    <P class="card-header"><%= prd.name%></P>
+                    <p class="age"><span>+</span>18</p>
+                </div>
+                <div class="card-trailer-netflix">
+                    <iframe src="<%= prd.trailer %>" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <div class="card-content-netflix">
+                        <p class="card-desc"><%= prd.description %></p>
+                        <p class="card-type"><span>Türler: </span> <%= prd.type%> </p>
+                        <p class="card-director"><span>Yönetmen: </span> <%= prd.director%> </p>
+                        <p class="card-stars"><span>Başrol: </span> <%= prd.actors%> </p>
+                        <p class="card-movie-time">
+                            <% if(prd.time === 0){%>
+                                Sezonlar: <span> <%=prd.seasons%> </span>
+                            <%} else{%>
+                                Suresi: <span> <%=prd.time%> dk</span>
+                            <%}%>
+                        </p>
+                    </div>
+                    <div class="card-imdb-netflix">
+                        <p>imdb: <span> <%=prd.imbdScore%></span></p>
+                    </div>
+                    <div class="card-playnow-bttn-netflix">
+                        <a href="<%=prd.link%>" target="_blank">Şimdi İzle <i class="far fa-play-circle"></i></a>
+                    </div>
+                </div>
+            </div>
 
-<!--Films and series mix-->
+            <!--Prime Video Section-->
+            <%} else if(prd.producer==="Prime Video" ){%>
+                <div class="card-hover-prime">
+                    <p class="header-prime"> <%= prd.producer%> </p>
+                    <div class="left-section-prime">
+                        <p class="year"><%= prd.releaseDate %></p>
+                        <P class="card-header"><%= prd.name%></P>
+                        <p class="age"><span>+</span>18</p>
+                    </div>
+                    <div class="card-trailer-prime">
+                        <iframe src="<%= prd.trailer %>" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <div class="card-content-prime">
+                            <p class="card-desc"><%= prd.description %></p>
+                            <p class="card-type"><span>Türler: </span> <%= prd.type%> </p>
+                            <p class="card-director"><span>Yönetmen: </span> <%= prd.director%> </p>
+                            <p class="card-stars"><span>Başrol: </span> <%= prd.actors%> </p>
+                            <p class="card-movie-time">
+                                <% if(prd.time === 0){%>
+                                    Sezonlar: <span> <%=prd.seasons%> </span>
+                                <%} else{%>
+                                    Suresi: <span> <%=prd.time%> dk</span>
+                                <%}%>
+                            </p>
+                        </div>
+                        <div class="card-imdb-prime">
+                            <p>imdb: <span> <%=prd.imbdScore%></span></p>
+                        </div>
+                        <div class="card-playnow-bttn-prime">
+                            <a href="https://www.netflix.com">Şimdi İzle <i class="far fa-play-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+            <%}else{%>
 
-<% product.forEach(prd => { %>
-    <div class="product-card">
-        <div class="product-card-title">
-            <h1><%= prd.name %></h1>
-            <p><%= prd.releaseDate %></p>
-        </div>
-        <div class="product-card-body">
-            <iframe src=<%=prd.trailer %>></iframe>
-        </div>
-        <div class="product-card-footer">
-            <p>Aciklana: <%=prd.description %></p>
-            <p>Oyuncular: <%=prd.actors %></p>
-            <% if(prd.time === 0){%>
-                <p>Sezonlar: <%=prd.seasons%></p>
-            <%} else{%> 
-                <p>Sure: <%=prd.time%></p>
+                <!--Exxen Section-->
+                <div class="card-hover-exxen">
+                    <p class="header-exxen"> <%= prd.producer%> </p>
+                    <div class="left-section-exxen">
+                        <p class="year"><%= prd.releaseDate %></p>
+                        <P class="card-header"><%= prd.name%></P>
+                        <p class="age"><span>+</span>18</p>
+                    </div>
+                    <div class="card-trailer-exxen">
+                        <iframe src="<%= prd.trailer %>" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <div class="card-content-exxen">
+                            <p class="card-desc"><%= prd.description %></p>
+                            <p class="card-type"><span>Türler: </span> <%= prd.type%> </p>
+                            <p class="card-director"><span>Yönetmen: </span> <%= prd.director%> </p>
+                            <p class="card-stars"><span>Başrol: </span> <%= prd.actors%> </p>
+                            <p class="card-movie-time">
+                                <% if(prd.time === 0){%>
+                                    Sezonlar: <span> <%=prd.seasons%> </span>
+                                <%} else{%>
+                                    Suresi: <span> <%=prd.time%> dk</span>
+                                <%}%>
+                            </p>
+                        </div>
+                        <div class="card-imdb-exxen">
+                            <p>imdb: <span> <%=prd.imbdScore%></span></p>
+                        </div>
+                        <div class="card-playnow-bttn-exxen">
+                            <a href="<%prd.link%>">Şimdi İzle <i class="far fa-play-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
             <%}%>
         </div>
-    </div>
-<%});%>
+    <%});%>
+  </div>
+</section>

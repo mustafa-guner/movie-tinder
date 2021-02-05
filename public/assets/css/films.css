@@ -1,0 +1,12 @@
+#films-page .card-container{
+    display: grid;
+   
+  
+    grid-template-columns: repeat(6,243px);
+    grid-column-gap: 60px;
+    grid-row-gap: 30px;
+    margin: 0.6rem;
+    justify-content: center;
+    position: relative;
+  
+}

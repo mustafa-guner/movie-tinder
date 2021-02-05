@@ -12,9 +12,17 @@ movieRoute.get("/",async (req,res)=>{
     if(req.query.name !=null && req.query.name !== ""){
         let query = query.regex("name",new RegExp(req.query.name,"i"))
     };
+    
+    //Categories of the films
+    if(req.query.types){
+     query = query.regex("type",new RegExp(req.query.types,"i"))
+    }
 
-    //Searching for types
-
+    //Searching for producers
+   if(req.query.producers){
+      query = query.regex("producer",new RegExp(req.query.producers,"i"));
+   }
+    
 
     // if(req.query.name != null && req.query.name !== ""){
     //     searchOptions.name = new RegExp(req.query.name,'i');

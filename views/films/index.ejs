@@ -1,44 +1,121 @@
+
 <form action="/filmler" method="GET">
-    Turler:
-    <select>
-        <option>Komedi</option>
-        <option>Korku</option>
-        <option>Aksiyon</option>
-        <option>Gerilim</option>
-        <option>Psikolojik</option>
-    </select>
-
-    <br>
-
-    Yapimci:
-    <select>
-        <option>Netflix</option>
-        <option>Exxen</option>
-        <option>Amazon</option>
-    </select>
+    <div class="movie-types">
+        <h3>Film Turleri</h3>
+        <select name="types">
+            <option>Komedi</option>
+            <option>Korku</option>
+            <option>Aksiyon</option>
+            <option>Gerilim</option>
+            <option>Psikolojik</option>
+        </select>
+    </div>
+    <div class="producers">
+        <h3>Yapimcilar</h3>
+        <select name="producers">
+            <option>Netflix</option>
+            <option>Exxen</option>
+            <option>Prime Video</option>
+        </select>
+    </div>
     <button type="submit">Ara</button>
 </form>
-<br>
-<% movies.forEach(movie=> { %>
-    <div class="product-card">
-        <div class="product-card-title">
-            <h1>
-                <%= movie.name %>
-            </h1>
-            <p>
-                <%= movie.releaseDate %>
-            </p>
+
+<section id="films-page">
+    <div class="card-container">
+    <% movies.forEach(movie=> { %>
+        <div class="cards">
+            <div class="card-part">
+                <img class="movie-img" src="<%= movie.image%>" alt="">
+            </div>
+            <!--Netflix Section-->
+            <% if(movie.producer==="Netflix" ){ %>
+            <div class="card-hover-netflix">
+                <p class="header-netflix"> <%= movie.producer%> </p>
+                <div class="left-section-netflix">
+                    <p class="year"><%= movie.releaseDate %></p>
+                    <P class="card-header"><%= movie.name%></P>
+                    <p class="age"><span>+</span>18</p>
+                </div>
+                <div class="card-trailer-netflix">
+                    <iframe src="<%= movie.trailer %>" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <div class="card-content-netflix">
+                        <p class="card-desc"><%= movie.description %></p>
+                        <p class="card-type"><span>Türler: </span> <%= movie.type%> </p>
+                        <p class="card-director"><span>Yönetmen: </span> <%= movie.director%> </p>
+                        <p class="card-stars"><span>Başrol: </span> <%= movie.actors%> </p>
+                        <p class="card-movie-time"> Suresi: <span> <%=movie.time%> dk</span> </p>
+                    </div>
+                    <div class="card-imdb-netflix">
+                        <p>imdb: <span> <%=movie.imbdScore%></span></p>
+                    </div>
+                    <div class="card-playnow-bttn-netflix">
+                        <a href="<%=movie.link%>" target="_blank">Şimdi İzle <i class="far fa-play-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Prime Video Section-->
+            <%} else if(movie.producer==="Prime Video" ){%>
+                <div class="card-hover-prime">
+                    <p class="header-prime"> <%= movie.producer%> </p>
+                    <div class="left-section-prime">
+                        <p class="year"><%= movie.releaseDate %></p>
+                        <P class="card-header"><%= movie.name%></P>
+                        <p class="age"><span>+</span>18</p>
+                    </div>
+                    <div class="card-trailer-prime">
+                        <iframe src="<%= movie.trailer %>" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <div class="card-content-prime">
+                            <p class="card-desc"><%= movie.description %></p>
+                            <p class="card-type"><span>Türler: </span> <%= movie.type%> </p>
+                            <p class="card-director"><span>Yönetmen: </span> <%= movie.director%> </p>
+                            <p class="card-stars"><span>Başrol: </span> <%= movie.actors%> </p>
+                            <p class="card-movie-time"> Suresi: <span> <%=movie.time%> dk</span> </p>
+                        </div>
+                        <div class="card-imdb-prime">
+                            <p>imdb: <span> <%=movie.imbdScore%></span></p>
+                        </div>
+                        <div class="card-playnow-bttn-prime">
+                            <a href="https://www.netflix.com">Şimdi İzle <i class="far fa-play-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+            <%}else{%>
+
+                <!--Exxen Section-->
+                <div class="card-hover-exxen">
+                    <p class="header-exxen"> <%= movie.producer%> </p>
+                    <div class="left-section-exxen">
+                        <p class="year"><%= movie.releaseDate %></p>
+                        <P class="card-header"><%= movie.name%></P>
+                        <p class="age"><span>+</span>18</p>
+                    </div>
+                    <div class="card-trailer-exxen">
+                        <iframe src="<%= movie.trailer %>" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <div class="card-content-exxen">
+                            <p class="card-desc"><%= movie.description %></p>
+                            <p class="card-type"><span>Türler: </span> <%= movie.type%> </p>
+                            <p class="card-director"><span>Yönetmen: </span> <%= movie.director%> </p>
+                            <p class="card-stars"><span>Başrol: </span> <%= movie.actors%> </p>
+                            <p class="card-movie-time"> Suresi: <span> <%=movie.time%> dk</span> </p>
+                        </div>
+                        <div class="card-imdb-exxen">
+                            <p>imdb: <span> <%=movie.imbdScore%></span></p>
+                        </div>
+                        <div class="card-playnow-bttn-exxen">
+                            <a href="<%movie.link%>">Şimdi İzle <i class="far fa-play-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+            <%}%>
         </div>
-        <div class="product-card-body">
-            <iframe src=<%=movie.trailer %>></iframe>
-        </div>
-        <div class="product-card-footer">
-            <p>
-                <%=movie.description %>
-            </p>
-            <p>
-                <%=movie.actors %>
-            </p>
-        </div>
-    </div>
     <%});%>
+  </div>
+</section>

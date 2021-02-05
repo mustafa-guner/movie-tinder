@@ -8,7 +8,9 @@ body {
     background-color: #414141;
     color: white;
     font-family: 'Montserrat', sans-serif;
-  
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 
@@ -33,9 +35,12 @@ header .header-container {
 #navbar .main-header,.main-header a{
     font-family: 'Hachi Maru Pop', cursive;
     color: white;
+    text-align: center;
+    width: 500px;
     padding: 0.3rem;
-    margin: 1rem 2rem 1rem 2rem;
+    margin: 1rem 2rem 1rem 0;
     text-decoration: none;
+    
 }
 
 #navbar .nav {
@@ -121,7 +126,7 @@ header .search-btn {
 }
 
 #home1 {
-    display: flex;
+    display: flex;margin-bottom: auto;
 }
 
 #left-content {
@@ -240,4 +245,8 @@ header .search-btn {
     margin-bottom: 0.5rem;
     color: #FE4141;
 }
+
+
+
+
 
